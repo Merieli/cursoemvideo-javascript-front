@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AEROPORTO DO BRASIL</title>
+    <style>
+        body {
+            font: normal 20px Arial;
+        }
+        input {
+            height: 10px;
+            width: 150px;
+            margin: 5px;
+            padding: 10px;
+            font-size: 18px;
+        }       
+    </style>
+</head>
+<body>
+    <h1>Verificação de Estrangeiros</h1>
+    <p>De qual país você é? <input type="text" name="pais" id="pais"><input type="button" value="Verificar" style="height: 40px; width: 100px;" onclick="estrangeiro()"></p>
+    <div id="res"></div>
+    <script>
+        function estrangeiro() {
+            let pais = document.getElementById('pais')
+            pais = String(pais.value)
+            pais = pais.toUpperCase()
+            let exib = document.querySelector('div#res')
+            exib.innerHTML += `<p><strong>Você vive em ${pais}</strong></p>`
+            if (pais == 'BRASIL') {
+                exib.innerHTML += `<p>Você é <strong>Brasileiro</strong>!</p>`
+            } else {
+                exib.innerHTML += `<p>Você é <strong>Estrangeiro</strong>!</p>`
+            }
+            
+        }
+    </script>
+</body>
+</html>

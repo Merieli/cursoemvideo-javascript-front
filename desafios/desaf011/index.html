@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ano Bissexto</title>
+    <style>
+        body {
+            font: normal 20px Arial;
+            /*background-color: #fc8c8c65;*/
+        }
+
+        #ebis {
+            background-color: #4bfd1583;
+            font-weight: bold;
+            color: green;
+            padding: 3px;
+        }
+
+        #nbis {
+            background-color: #fc8c8c8e;
+            font-weight: bold;
+            color: rgb(141, 22, 22);
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ano Bissexto</h1>
+    <button onclick="verificar()">Verificar</button>
+    <p id="res">Informe um ano para saber se ele é bissexto</p>
+    <script>
+        function verificar() {
+            var ano = window.prompt('Qual é o ano que você quer verificar?')
+            var res = document.getElementById('res')
+            res.innerHTML = `<strong>Analisando o ano de ${ano}...</strong>`
+            if (ano % 4 == 0 && ano % 100 !== 0 ) {
+                res.innerHTML += `<p>O ano de ${ano} <span id='ebis'>É BISSEXTO</span> &#x2611</p>`
+                
+            } else if (ano % 4 !== 0 && ano % 400 == 0) {
+                res.innerHTML += `<p>O ano de ${ano} <span id='ebis'>É BISSEXTO</span> &#x2611</p>`
+                
+            } else {
+                res.innerHTML += `<p>O ano de ${ano} <span id='nbis'>NÃO É BISSEXTO</span> &#x2716</p>`
+                span.style.background = '#fc8c8c65'
+            }
+        }
+    </script>
+</body>
+</html>

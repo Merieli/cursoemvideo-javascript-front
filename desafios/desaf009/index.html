@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajustar salário</title>
+</head>
+<body>
+    <h1>Reajuste Salarial</h1>
+    <button onclick="reajuste()">Reajustar Salário</button>
+    <p id="saida">Clique no botão acima para iniciar</p>
+    <style>
+        body {
+            font: normal 20px Arial;
+        }
+        button {
+            font-size: 20px;
+            padding: 20px;
+        }
+        strong {
+            font-size: 30px;
+        }
+    </style>
+    <script>
+        function reajuste() {
+            let nome = window.prompt('Qual é o nome do funcionário?')
+            let sal = window.prompt(`Qual é o salário atual de ${nome}?`)
+            let percent = window.prompt(`O salário de ${nome} vai ser reajustado em qual porcentagem?`)
+            sal = Number.parseFloat(sal)
+            percent = Number.parseInt(percent)
+            let aumento = sal * (percent / 100)
+            let novosal = sal + aumento
+            let exib = document.querySelector('p#saida')
+            exib.innerHTML = `<p><strong>${nome} recebeu um aumento salarial!</strong></p>`
+            exib.innerHTML += `<p>O salário atual era ${sal.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</p>`
+            exib.innerHTML += `<p>Com um aumento de ${percent}%, o salário vai aumentar ${aumento.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})} no próximo mês</p>`
+            exib.innerHTML += `<p>E a partir daí, ${nome} vai passar a ganhar ${novosal.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</p>`
+        }
+    </script>
+</body>
+</html>

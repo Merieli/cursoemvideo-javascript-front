@@ -1,0 +1,30 @@
+@charset "UFT-8";
+
+body {
+    font: normal 20px Arial;
+    background-color: rgb(138, 192, 243);
+}
+
+header {
+    color: white;
+    text-align: center;
+}
+
+section {
+    background-color: white;
+    width: 500px;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.411);
+}
+
+div {
+    padding: 10px;
+}
+
+footer {
+    color: white;
+    text-align: center;
+}
